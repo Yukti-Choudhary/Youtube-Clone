@@ -1,0 +1,39 @@
+.videoContainer{
+  margin-left: 250px;
+}
+
+.videoContainer__main {
+  padding: 0;
+  overflow: hidden;
+}
+.videoContainer__video{
+  margin-top: 25px;
+}
+
+.closed {
+  width: 90vw;
+}
+
+.error{
+  margin-left: 10%;
+  margin-top: 50px;
+  line-height: 40px;
+  color: rgba(0, 0, 0,0.7);
+}
+
+@media screen and (max-width: 1200px) {
+  .home {
+    margin-left: 100px;
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+  }
+  .videoContainer{
+    margin-left: 0;
+  }
+  .closed {
+    /* margin-top: 11vh;
+    margin-left: 10%; */
+    transform: translateX(-10%);
+    transition: transform 0.3s ease;
+  }
+}

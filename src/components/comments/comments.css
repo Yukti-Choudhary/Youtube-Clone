@@ -1,0 +1,15 @@
+.comments {
+  margin-top: 20px;
+}
+
+.comments__replies{
+  padding-left: 10px;
+  margin-left: 25px;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 992px) {
+  .comments {
+    display: none;
+  }
+}

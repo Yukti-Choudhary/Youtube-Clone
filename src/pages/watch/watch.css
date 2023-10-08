@@ -1,0 +1,33 @@
+.watch {
+  padding-top: 12vh;
+}
+.watch__player {
+  padding-bottom: 20px;
+}
+
+.watch__player iframe {
+  height: 34vw;
+}
+.watch__comment {
+  margin-top: 20px;
+}
+@media screen and (min-width: 990px) {
+  .watch {
+    padding-left: 80px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .watch {
+    padding: 12vh 25px 0;
+  }
+
+  .watch__player iframe {
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .watch__comment span {
+    display: none;
+  }
+}

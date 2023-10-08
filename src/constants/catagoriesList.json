@@ -1,0 +1,19 @@
+[
+    { "id": 1, "value": "All" },
+    { "id": 2, "value": "Mixes" },
+    { "id": 3, "value": "Music" },
+    { "id": 4, "value": "React-Js" },
+    { "id": 5, "value": "React-Router" },
+    { "id": 6, "value": "Redux" },
+    { "id": 7, "value": "CSS" },
+    { "id": 8, "value": "HTML" },
+    { "id": 9, "value": "JavaScript" },
+    { "id": 11, "value": "K-Pop" },
+    { "id": 12, "value": "Comedy" },
+    { "id": 13, "value": "News" },
+    { "id": 14, "value": "Pop Rock" },
+    { "id": 15, "value": "Bollywood Music" },
+    { "id": 16, "value": "Ed Sheeran" },
+    { "id": 17, "value": "Fuji" },
+    { "id": 18, "value": "Photography" }
+  ]

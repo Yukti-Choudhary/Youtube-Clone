@@ -1,0 +1,54 @@
+.skeleton {
+  margin-bottom: 40px;
+}
+
+.skeleton__thumbnail {
+  height: 200px;
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 8px;
+  animation: loadingAnimation 1.5s infinite;
+}
+
+.skeleton__footer{
+margin-top: 20px;
+display: flex;
+
+}
+
+.skeleton__channelURL{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.15);;
+    animation: loadingAnimation 1.5s infinite;
+}
+
+.skeleton__details{
+    margin-left: 15px;
+    width: 78%;
+}
+
+.skeleton__title, .skeleton__channelName{
+   height: 15px;
+   margin-bottom: 15px;
+    background-color: rgba(0,0,0,0.15);;
+    border-radius: 3px;
+    animation: loadingAnimation 1.5s infinite;
+}
+
+.skeleton__channelName{
+    width:65%;
+}
+
+@keyframes loadingAnimation {
+    0% {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+    50% {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+  

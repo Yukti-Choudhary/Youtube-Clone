@@ -1,0 +1,16 @@
+h1 {
+  background-color: aqua;
+  padding: 100px 0;
+}
+
+.search__videoList {
+  padding-top: 11vh;
+  width:70vw;
+  margin-left: 18vw;
+}
+
+@media screen and (max-width: 992px){
+  .search__videoList {
+    width:75vw;
+  }
+}

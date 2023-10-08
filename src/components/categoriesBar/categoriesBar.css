@@ -1,0 +1,71 @@
+.categoriesBar {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.categoriesBar__main {
+  display: flex;
+  align-items: center;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.categoriesBar__main::-webkit-scrollbar {
+  display: none;
+}
+
+.notActive:last-of-type,
+.active:last-of-type {
+  margin-right: 50px;
+}
+
+.notActive {
+  margin-right: 15px;
+  white-space: nowrap;
+  padding: 5px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+.notActive:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.active {
+  margin-right: 15px;
+  white-space: nowrap;
+  padding: 5px 15px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.right,
+.left {
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+}
+
+.left {
+  background-image: linear-gradient(to right, white 70%, transparent);
+  margin-right: 10px;
+  padding: 5px 40px 5px 5px;
+}
+
+.right {
+  background-image: linear-gradient(to left, white 70%, transparent);
+  margin-left: 10px;
+  right:0;
+  padding: 5px 5px 5px 31px;
+}
+
+.leftHide {
+  display: none;
+}

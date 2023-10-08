@@ -1,0 +1,57 @@
+.signin {
+  position: fixed;
+  z-index: 1000;
+  bottom: 20px;
+  left: 30px;
+  width: 50vw;
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.signin-close {
+  display: none;
+}
+
+.signin__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.signin__title img {
+  width: 30px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.signin__details {
+  margin-bottom: 45px;
+  padding-right: 20px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.sigin__buttons {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.sigin__buttons span:first-child {
+  margin-right: 30px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sigin__buttons span:last-child {
+  color: rgb(40, 140, 227);
+}
+
+@media screen and (max-width: 720px) {
+  .signin {
+    width: 80vw;
+  }
+}

@@ -1,0 +1,48 @@
+.liveChat {
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.liveChat__heading {
+  flex: 0.08;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  font-size: 17px;
+}
+
+.liveChat__body {
+  background-color: rgba(0, 0, 0, 0.04);
+  flex: 0.82;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.liveChat__input {
+  flex: 0.1;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.liveChat__input input {
+  width: 85%;
+  padding: 14px;
+  border: none;
+}
+
+.liveChat__input input:focus {
+  outline: none;
+}
+
+.liveChat__input button {
+  width: 15%;
+  padding: 15px 10px;
+  border: none;
+  background-color: white;
+}

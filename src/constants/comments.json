@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Yukti Choudhary",
+    "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone. Very helpful and organized tutorial, much appreciate your effort! ♥",
+    "commentedAt": "1 month ago",
+    "replies": [
+      {
+        "id": 11,
+        "name": "Mahesh ",
+        "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone.",
+        "commentedAt": "14 days ago",
+        "replies": [
+          {
+            "id": 112,
+            "name": "Akansha Upadhay",
+            "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone.",
+            "commentedAt": "7 days ago",
+            "replies": [
+              {
+                "id": 1123,
+                "name": "Lokesh Sony",
+                "text": "I have followed the whole tutorial and created my version of the YouTube clone.",
+                "commentedAt": "7 days ago",
+                "replies": []
+              }
+            ]
+          },
+          {
+            "id": 113,
+            "name": "Varsha Mehta",
+            "text": "I have followed the whole tutorial and created my version of the YouTube clone.",
+            "commentedAt": "10 days ago",
+            "replies": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Raj Kapoor",
+    "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone. Very helpful and organized tutorial, much appreciate your effort! ♥",
+    "commentedAt": "4 months ago",
+    "replies": [
+      {
+        "id": 21,
+        "name": "Sajal Chadda",
+        "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone.",
+        "commentedAt": "4 months ago",
+        "replies": [
+          {
+            "id": 212,
+            "name": "Utsav Jain",
+            "text": "I have followed the whole tutorial and created my version of the YouTube clone.",
+            "commentedAt": "3 months ago",
+            "replies": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Safeena Saikh",
+    "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone. Very helpful and organized tutorial, much appreciate your effort! ♥",
+    "commentedAt": "1 year ago",
+    "replies": []
+  },
+  {
+    "id": 4,
+    "name": "Anshul laad",
+    "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone. Very helpful and organized tutorial, much appreciate your effort! ♥",
+    "commentedAt": "1 year ago",
+    "replies": [
+      {
+        "id": 41,
+        "name": "Saurabh Saini",
+        "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone.",
+        "commentedAt": "9 months ago",
+        "replies": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Rohit Mahoday",
+    "text": "lorem Thanks a lot, man! I have followed the whole tutorial and created my version of the YouTube clone. Very helpful and organized tutorial, much appreciate your effort! ♥",
+    "commentedAt": "1 year ago",
+    "replies": []
+  }
+]

@@ -1,0 +1,24 @@
+.home__container {
+  display: flex;
+  height: 90vh;
+
+}
+
+.home__main {
+  margin-top: 12vh;
+  height: 88vh;
+}
+
+@media screen and (max-width: 1200px){
+  .home__main{
+    margin-left: 100px;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 585px){
+  .home__main{
+    margin-left: 100px;
+    width: 70vw;
+  }
+}

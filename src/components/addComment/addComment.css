@@ -1,0 +1,45 @@
+.addComment {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 25px;
+}
+
+.addComment img {
+  width: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.addComment form {
+  width: 100%;
+}
+
+.addComment input {
+  width: 88%;
+  padding: 5px 10px;
+  border: none;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.addComment input:focus {
+  outline: none;
+}
+
+.addComment button {
+  border: none;
+  width: fit-content;
+  border-radius: 25px;
+  padding: 6px 12px;
+  margin-left: 6px;
+}
+
+.addComment button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 992px) {
+  .addComment {
+    display: none;
+  }
+}

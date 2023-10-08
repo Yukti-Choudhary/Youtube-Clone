@@ -1,0 +1,26 @@
+.chatList {
+  display: flex;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.chatList img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+}
+
+.chatList__info {
+  display: flex;
+  width: 100%;
+}
+
+.chatList__info span:first-of-type {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.chatList__info span:last-of-type {
+  width: 85%;
+  word-break: break-word;
+}

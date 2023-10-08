@@ -1,0 +1,32 @@
+.commentList{
+    display: flex;
+    margin: 20px 0;
+}
+
+.commentList img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+
+.commentsList__likes{
+    display: flex;
+}
+
+.commentsList__likes p{
+   width: 40px;
+}
+
+.commentList__details>p{
+    margin-bottom: 6px;
+}
+.username{
+    font-weight: 600;
+}
+.username small{
+    font-weight: 500;
+    font-size: 13.5px;
+    margin-left: 5px;
+    color: rgba(0,0,0,0.75);
+}

@@ -1,0 +1,64 @@
+.profile {
+  position: absolute;
+  z-index: 3000;
+  display: block;
+  right: 8vw;
+  top: 15px;
+  border-radius: 10px;
+  width: 300px;
+  height: fit-content;
+  background-color: white;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.open {
+  display: none;
+}
+
+.profile__header {
+  margin-left: 4px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.profile__main {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.profile__main img{
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.profile ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 650px;
+}
+
+.right__icon {
+  position: absolute;
+  right: 5px;
+}
+
+.profile ul li {
+  border-radius: 6px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile ul li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.profile ul li span {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}

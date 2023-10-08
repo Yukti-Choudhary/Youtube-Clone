@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 1vw;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 2000;
+}
+
+.header__left img {
+  margin: 0 20px;
+  width: 110px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.header__center {
+  display: flex;
+  margin: auto;
+  margin-top: 7px;
+}
+
+.header__center input {
+  width: 38vw;
+  border-color: rgba(0, 0, 0, 0.15);
+  padding: 8px 20px;
+  border-radius: 20px 0 0 20px;
+  font-weight: 500;
+}
+
+.header__center input:focus {
+  outline: none;
+}
+
+.header__center button {
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 0 20px 20px 0;
+  padding: 8px 20px;
+  border-left: none;
+  margin-right: 10px;
+}
+.header__center button:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.header__right img{
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+.menu,
+.avatar,
+.notify,
+.mic,
+.create {
+  cursor: pointer;
+  padding: 9px;
+}
+.mic {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.notify,
+.create {
+  margin-right: 5px;
+}
+
+.menu:hover,
+.notify:hover,
+.create:hover,
+.mic:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+}
+.mic:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  input[type="text"] {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .header__center input  {
+    display: none;
+  }
+
+  .header__center button {
+    border: none;
+    background-color: white;
+    margin: 5px;
+    padding: 8px 10px;
+  }
+
+  .header__left img {
+    margin: 0 10px;
+  }
+
+  .avatar,
+  .notify,
+  .mic,
+  .create {
+    margin-right: 5px;
+  }
+
+  .header__center button:hover {
+    border-radius: 100%;
+  }
+}
