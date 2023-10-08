@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./videoCard.css";
 import request from "../../api";
 import moment from "moment";
@@ -19,10 +19,6 @@ const VideoCard = ({ video }) => {
     },
   } = video;
 
-  // const [views, setViews] = useState(null);
-  // const [duration, setduration] = useState(null);
-  // const [channelIcon, setchannelIcon] = useState(null);
-
   const dispatch = useDispatch();
   const { views, duration, channelIcon } = useSelector((state) => state.video);
 
@@ -42,9 +38,6 @@ const VideoCard = ({ video }) => {
             id: _videoId,
           },
         });
-
-        // setduration(items[0].contentDetails.duration);
-        // setViews(items[0].statistics.viewCount);
         dispatch(addDuration({ duration: items[0].contentDetails.duration }));
         dispatch(addViews({ views: items[0].statistics.viewCount }));
       } catch (error) {
@@ -52,33 +45,28 @@ const VideoCard = ({ video }) => {
       }
     };
     if (!duration && !views) get_video_details();
-  }, [_videoId, duration, views]);
+  }, [_videoId, duration, views, dispatch]);
 
-  useEffect(
-    () => {
-      const get_channel_icon = async () => {
-        try {
-          const {
-            data: { items },
-          } = await request("/channels", {
-            params: {
-              part: "snippet",
-              id: channelId,
-            },
-          });
-          // setchannelIcon(items[0].snippet.thumbnails.default);
-          dispatch(
-            addChannelIcon({ channelIcon: items[0].snippet.thumbnails.default })
-          );
-        } catch (error) {
-          console.log(error.message);
-        }
-      };
-      !channelIcon && get_channel_icon();
-    },
-    [channelId],
-    channelIcon
-  );
+  useEffect(() => {
+    const get_channel_icon = async () => {
+      try {
+        const {
+          data: { items },
+        } = await request("/channels", {
+          params: {
+            part: "snippet",
+            id: channelId,
+          },
+        });
+        dispatch(
+          addChannelIcon({ channelIcon: items[0].snippet.thumbnails.default })
+        );
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    !channelIcon && get_channel_icon();
+  }, [channelId, channelIcon, dispatch]);
 
   return (
     <Link to={`/watch/${_videoId}`}>
