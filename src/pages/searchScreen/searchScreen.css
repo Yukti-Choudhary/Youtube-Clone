@@ -5,12 +5,18 @@ h1 {
 
 .search__videoList {
   padding-top: 11vh;
-  width:70vw;
+  width: 70vw;
   margin-left: 18vw;
 }
 
-@media screen and (max-width: 992px){
+.search__videoList h4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+@media screen and (max-width: 992px) {
   .search__videoList {
-    width:75vw;
+    width: 75vw;
   }
 }

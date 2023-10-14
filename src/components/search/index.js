@@ -10,6 +10,7 @@ import { addSearchVideos } from "../../utils/videoSlice";
 const Search = () => {
   const [input, setInput] = useState("");
   const [searchList, setSearchList] = useState([]);
+  const [searchError, setSearchError] = useState(null);
   const [loadingSearch, setLoadingSearch] = useState(true);
 
   const searchCache = useSelector((state) => state.search);
@@ -18,16 +19,23 @@ const Search = () => {
   const dispatch = useDispatch();
 
   const getSearchResults = async () => {
-    const { data } = await request("/search", {
-      params: {
-        part: "snippet",
-        maxResults: 4,
-        q: input,
-        type: "video",
-      },
-    });
-    dispatch(addSearchVideos({ searchVideos: data.items }));
-    setLoadingSearch(false);
+    try {
+      const { data } = await request("/search", {
+        params: {
+          part: "snippet",
+          maxResults: 4,
+          q: input,
+          type: "video",
+        },
+      });
+      dispatch(addSearchVideos({ searchVideos: data.items }));
+      setLoadingSearch(false);
+      setSearchError(null);
+    } catch (error) {
+      setSearchError(error.message);
+      console.log(error.message);
+      setLoadingSearch(false);
+    }
   };
 
   const getSearchList = async () => {
@@ -60,20 +68,23 @@ const Search = () => {
     }, 200);
 
     return () => clearTimeout(i);
-  }, [input]);
+  }, [input, searchCache]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setInput("");
-    navigate(`/search/${input}`, { state: { searchVideos, loadingSearch } });
+    navigate(`/search/${input}`, {
+      state: { searchVideos, loadingSearch, searchError },
+    });
   };
 
   const handleSearchList = (index) => {
     setSearchList([]);
-    dispatch(addSearchVideos({ searchVideos: searchList[index] }));
+    setInput(searchList[index]);
     navigate(`/search/${searchList[index]}`, {
-      state: { searchVideos, loadingSearch },
+      state: { searchVideos, loadingSearch, searchError },
     });
+    setInput("")
   };
 
   return (

@@ -4,6 +4,7 @@ const videoSlice = createSlice({
   name: "video",
   initialState: {
     popularVideos: null,
+    searchVideos: [],
   },
   reducers: {
     addPopularVideos: (state, action) => {
