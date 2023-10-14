@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./videoCard.css";
 import request from "../../api";
 import moment from "moment";
 import numeral from "numeral";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addChannelIcon, addDuration, addViews } from "../../utils/videoSlice";
 
 const VideoCard = ({ video }) => {
+  const [views, setViews] = useState(null);
+  const [duration, setDuration] = useState(null);
+  const [channelIcon, setChannelIcon] = useState(null);
   const {
     id,
     snippet: {
@@ -19,54 +20,55 @@ const VideoCard = ({ video }) => {
     },
   } = video;
 
-  const dispatch = useDispatch();
-  const { views, duration, channelIcon } = useSelector((state) => state.video);
-
   const seconds = moment.duration(duration).asSeconds();
   const _duration = moment.utc(seconds * 1000).format("mm:ss");
 
   const _videoId = id?.videoId || id;
 
-  useEffect(() => {
-    const get_video_details = async () => {
-      try {
-        const {
-          data: { items },
-        } = await request("/videos", {
-          params: {
-            part: "contentDetails,statistics",
-            id: _videoId,
-          },
-        });
-        dispatch(addDuration({ duration: items[0].contentDetails.duration }));
-        dispatch(addViews({ views: items[0].statistics.viewCount }));
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    if (!duration && !views) get_video_details();
-  }, [_videoId, duration, views, dispatch]);
+  const get_video_details = async () => {
+    try {
+      const {
+        data: { items },
+      } = await request("/videos", {
+        params: {
+          part: "contentDetails,statistics",
+          id: _videoId,
+        },
+      });
+      setDuration(items[0].contentDetails.duration);
+      setViews(items[0].statistics.viewCount);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const memoizedGetVideoDetails = useMemo(() => get_video_details, []);
 
   useEffect(() => {
-    const get_channel_icon = async () => {
-      try {
-        const {
-          data: { items },
-        } = await request("/channels", {
-          params: {
-            part: "snippet",
-            id: channelId,
-          },
-        });
-        dispatch(
-          addChannelIcon({ channelIcon: items[0].snippet.thumbnails.default })
-        );
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    !channelIcon && get_channel_icon();
-  }, [channelId, channelIcon, dispatch]);
+    memoizedGetVideoDetails();
+  }, [memoizedGetVideoDetails, _videoId]);
+
+  const get_channel_icon = async () => {
+    try {
+      const {
+        data: { items },
+      } = await request("/channels", {
+        params: {
+          part: "snippet",
+          id: channelId,
+        },
+      });
+      setChannelIcon(items[0].snippet.thumbnails.default);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const memoizedGetChannelIcon = useMemo(() => get_channel_icon, []);
+
+  useEffect(() => {
+    memoizedGetChannelIcon();
+  }, [memoizedGetChannelIcon, channelId]);
 
   return (
     <Link to={`/watch/${_videoId}`}>

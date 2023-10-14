@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./home.css";
 import { Sidebar, VideoContainer, SignIn, Skeleton } from "../../components";
 import request from "../../api";
@@ -29,10 +29,11 @@ const Home = () => {
       console.log(error.message);
     }
   };
+  const memoizedGetPopularVideos = useMemo(() => getPopularVideos, []);
 
   useEffect(() => {
-    !popularVideos && getPopularVideos();
-  }, []);
+    memoizedGetPopularVideos();
+  }, [memoizedGetPopularVideos]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {

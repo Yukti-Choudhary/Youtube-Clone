@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./search.css";
 import { TfiSearch } from "react-icons/tfi";
 import { useNavigate } from "react-router-dom";
@@ -44,9 +44,11 @@ const Search = () => {
     );
   };
 
+  const memoizedGetSearchResults = useMemo(() => getSearchResults, [input]);
+
   useEffect(() => {
-    !searchVideos && getSearchResults();
-  }, []);
+    memoizedGetSearchResults();
+  }, [memoizedGetSearchResults]);
 
   useEffect(() => {
     const i = setTimeout(() => {

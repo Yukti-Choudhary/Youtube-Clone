@@ -18,7 +18,7 @@ const SidebarPortal = () => {
     return () => {
       dispatch(toggleSidebar(true));
     };
-  }, []);
+  }, [dispatch]);
 
   return ReactDOM.createPortal(
     <div className="sidebarPortal">
