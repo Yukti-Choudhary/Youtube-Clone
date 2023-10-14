@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 const VideoContainer = ({ videos }) => {
   const toggle = useSelector((store) => store.header.toggle);
 
+  if (!videos) return;
+  
   return (
     <div className={toggle ? "videoContainer" : "closed"}>
       <div className="container videoContainer__main">

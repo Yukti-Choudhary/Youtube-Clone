@@ -8,6 +8,7 @@ import { addPopularVideos } from "../../utils/videoSlice";
 const Home = () => {
   const [modalShow, setModalShow] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const { name } = useSelector((state) => state.auth.profile);
   const { popularVideos } = useSelector((state) => state.video);
@@ -25,8 +26,11 @@ const Home = () => {
       });
       dispatch(addPopularVideos({ popularVideos: data.items }));
       setLoading(false);
+      setError(null);
     } catch (error) {
       console.log(error.message);
+      setError(error.message);
+      setLoading(false);
     }
   };
   const memoizedGetPopularVideos = useMemo(() => getPopularVideos, []);
@@ -52,6 +56,13 @@ const Home = () => {
         <Sidebar />
         <div className="container-fluid home__main ">
           {loading ? <Skeleton /> : <VideoContainer videos={popularVideos} />}
+          {error && (
+            <h4>
+              {error} :
+              <br /> <br/>
+              Looks like the daily limit of API key has been exhausted. Sorry for the inconvenience!
+            </h4>
+          )}
         </div>
       </div>
     </>

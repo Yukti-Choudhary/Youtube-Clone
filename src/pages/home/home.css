@@ -9,6 +9,12 @@
   height: 88vh;
 }
 
+.home__main h4{
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
 @media screen and (max-width: 1200px){
   .home__main{
     margin-left: 100px;
